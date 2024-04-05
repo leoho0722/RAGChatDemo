@@ -8,13 +8,17 @@
 import SwiftHelpers
 import SwiftUI
 
-struct ChatSegmentControlItem {
+struct ChatSegmentControlItem: Previews {
     
     let title: LocalizedStringKey
     
     let symbols: SFSymbols
         
-    static let preview: ChatSegmentControlItem = .init(title: "Text", symbols: .keyboard)
+    static var previewValue: ChatSegmentControlItem {
+        get {
+            return ChatSegmentControlItem(title: "Text", symbols: .keyboard)
+        }
+    }
 }
 
 struct ChatSegmentControl: View {
