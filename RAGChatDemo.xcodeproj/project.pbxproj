@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0AB78262BC570E400DA37A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB78252BC570E400DA37A3 /* NetworkManager.swift */; };
+		D0AB78282BC5844A00DA37A3 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB78272BC5844A00DA37A3 /* NetworkConfiguration.swift */; };
+		D0AB782A2BC5867600DA37A3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB78292BC5867600DA37A3 /* NetworkError.swift */; };
+		D0AB782D2BC592F000DA37A3 /* RAG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB782C2BC592F000DA37A3 /* RAG.swift */; };
+		D0AB78302BC593DD00DA37A3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB782F2BC593DD00DA37A3 /* DatabaseManager.swift */; };
 		D0C2EBD42BBD8F2400C752A0 /* RAGChatDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2EBD32BBD8F2400C752A0 /* RAGChatDemoApp.swift */; };
 		D0C2EBD62BBD8F2400C752A0 /* RAGChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2EBD52BBD8F2400C752A0 /* RAGChatView.swift */; };
 		D0C2EBD82BBD8F2500C752A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C2EBD72BBD8F2500C752A0 /* Assets.xcassets */; };
@@ -27,6 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0AB78252BC570E400DA37A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D0AB78272BC5844A00DA37A3 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		D0AB78292BC5867600DA37A3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		D0AB782C2BC592F000DA37A3 /* RAG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAG.swift; sourceTree = "<group>"; };
+		D0AB782F2BC593DD00DA37A3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D0C2EBD02BBD8F2400C752A0 /* RAGChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAGChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C2EBD32BBD8F2400C752A0 /* RAGChatDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAGChatDemoApp.swift; sourceTree = "<group>"; };
 		D0C2EBD52BBD8F2400C752A0 /* RAGChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAGChatView.swift; sourceTree = "<group>"; };
@@ -58,6 +68,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0AB78232BC570B500DA37A3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D0AB782E2BC593C500DA37A3 /* Database */,
+				D0AB78242BC570C300DA37A3 /* Network */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D0AB78242BC570C300DA37A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D0AB782B2BC592D900DA37A3 /* APIs */,
+				D0AB78252BC570E400DA37A3 /* NetworkManager.swift */,
+				D0AB78272BC5844A00DA37A3 /* NetworkConfiguration.swift */,
+				D0AB78292BC5867600DA37A3 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D0AB782B2BC592D900DA37A3 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				D0AB782C2BC592F000DA37A3 /* RAG.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		D0AB782E2BC593C500DA37A3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				D0AB782F2BC593DD00DA37A3 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		D0C2EBC72BBD8F2400C752A0 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +126,7 @@
 				D0C2EBD32BBD8F2400C752A0 /* RAGChatDemoApp.swift */,
 				D0C2EC012BBFE9A700C752A0 /* Localizables */,
 				D0C2EBF62BBEF8E800C752A0 /* Extensions */,
+				D0AB78232BC570B500DA37A3 /* Managers */,
 				D0C2EBE32BBD8FAF00C752A0 /* Models */,
 				D0C2EBEF2BBD9B5500C752A0 /* ViewModels */,
 				D0C2EBE12BBD8F3A00C752A0 /* Views */,
@@ -248,17 +295,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C2EBD62BBD8F2400C752A0 /* RAGChatView.swift in Sources */,
+				D0AB782A2BC5867600DA37A3 /* NetworkError.swift in Sources */,
 				D0C2EBE92BBD970600C752A0 /* ChatCell.swift in Sources */,
 				D0C2EC002BBF2D4D00C752A0 /* AppDefine.swift in Sources */,
 				D0C2EBF82BBEF90400C752A0 /* ModelContext+Extensions.swift in Sources */,
 				D0C2EBF12BBD9B9000C752A0 /* ChatFooterViewViewModel.swift in Sources */,
 				D0C2EC052BBFF0D500C752A0 /* Previews.swift in Sources */,
 				D0C2EBEB2BBD979400C752A0 /* ChatView.swift in Sources */,
+				D0AB78302BC593DD00DA37A3 /* DatabaseManager.swift in Sources */,
 				D0C2EBFC2BBF0A6B00C752A0 /* ChatSegmentControlViewModel.swift in Sources */,
 				D0C2EBF52BBEE3C000C752A0 /* ChatListView.swift in Sources */,
 				D0C2EBFA2BBF074300C752A0 /* ChatSegmentControl.swift in Sources */,
+				D0AB78262BC570E400DA37A3 /* NetworkManager.swift in Sources */,
+				D0AB78282BC5844A00DA37A3 /* NetworkConfiguration.swift in Sources */,
 				D0C2EBE52BBD8FBD00C752A0 /* Chat.swift in Sources */,
 				D0C2EBD42BBD8F2400C752A0 /* RAGChatDemoApp.swift in Sources */,
+				D0AB782D2BC592F000DA37A3 /* RAG.swift in Sources */,
 				D0C2EBF32BBEE35400C752A0 /* ChatFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

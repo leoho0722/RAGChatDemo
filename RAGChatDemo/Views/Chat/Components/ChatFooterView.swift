@@ -107,8 +107,16 @@ fileprivate extension ChatFooterView {
     func buildSendChatBtn() -> some View {
         Button {
             // 發送訊息
-            vm.sendChat(context: modelContext, chatMessage: inputMessage)
-            inputMessage = ""
+            Task {
+                let question = Chat(content: inputMessage, isReply: true)
+                try vm.saveChat(context: modelContext, chat: question)
+                inputMessage = ""
+                
+                let res = try await vm.send(question: question.content)
+                
+                let reply = Chat(content: "Reply:\n\(res.answer)", isReply: false)
+                try vm.saveChat(context: modelContext, chat: reply)
+            }
         } label: {
             Image(symbols: .paperplane)
         }

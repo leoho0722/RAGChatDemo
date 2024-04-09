@@ -10,13 +10,18 @@ import SwiftUI
 
 final class ChatFooterViewViewModel {
     
-    func sendChat(context: ModelContext, chatMessage: String) {
-        guard !chatMessage.isEmpty else {
+    func saveChat(context: ModelContext, chat: Chat) throws {
+        guard !chat.content.isEmpty else {
             return
         }
-        
-        let newChat = Chat(content: chatMessage, isReply: true)
-        let replyChat = Chat(content: "Reply of \(chatMessage)", isReply: false)
-        context.inserts(newChat, replyChat)
+        try DatabaseManager.shared.save(context: context, model: chat)
+    }
+    
+    func send(question: String) async throws -> RAGResponse {
+        let request = RAGRequest(question: question)
+        let result: RAGResponse = try await NetworkManager.shared.requestData(method: .post,
+                                                                              path: .ragQA,
+                                                                              parameters: request)
+        return result
     }
 }
